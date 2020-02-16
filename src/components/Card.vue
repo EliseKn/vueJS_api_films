@@ -1,19 +1,20 @@
 <template>
   <div class="d-flex">
-    <b-card
-      :title="film.Title"
-      :img-src="film.Poster"
-      :img-alt="film.Title"
+    <div
+      :title="result.Title"
+      :img-src="result.Poster"
+      img-alt="image"
       img-top
       tag="article"
       style="max-width: 20rem;"
       class="mb-2">
-      <b-card-text>
-        {{ film.Plot }}, <br /> <br />
-        Année de sortie : {{ film.Year }}
-      </b-card-text>
-      <b-button href="#" variant="primary" @click="addFav(film)" >Ajouter aux favoris</b-button>
-    </b-card>
+      <div>
+        {{ result.Year }}
+      </div>
+      <button href="#" 
+        variant="primary" 
+        @click="addFav(result)" >Ajouter aux favoris </button>
+    </div>
   </div>
 </template>
 
@@ -24,22 +25,22 @@ const axios = require('axios').default;
 export default {
   name: "Card",
   props: {
-    films: String
+    film: String
   },
   data() {
     return {
-      film: {}
+      result: {}
     };
   },
   methods: {
-    addFav: function(film){
-      this.$store.commit('addFav', film)
+    addFav: function(result){
+      this.$store.commit('addFav', result)
     }
   },
   mounted() {
     axios
-      .get("http://www.omdbapi.com/?i=" + this.films + "&apikey=fdcf0a59")
-      .then(response => (this.film = response.data));
+      .get("http://www.omdbapi.com/?s=galaxy&apikey=fdcf0a59")
+      .then(response => (this.result = response.data));
   }
 };
 

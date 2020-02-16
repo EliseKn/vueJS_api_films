@@ -1,12 +1,12 @@
 <template>
-  <b-container class="d-flex align-center flex-column">
+  <div class="d-flex align-center flex-column">
     <h1 class="text-center">Liste des films</h1>
     <div class="row d-flex justify-content-center">
       <div v-for="film in films" :key="film.imdbID">
         <Card class="d-flex justify-content-center" :film="film.imdbID"></Card>
       </div>
     </div>
-  </b-container>
+  </div>
 </template>
 
 <script>

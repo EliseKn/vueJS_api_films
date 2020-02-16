@@ -1,25 +1,22 @@
 <template>
   <div>
-    <div class="text-center">Favoris</div>
+    <h1 class="text-center">Favoris</h1>
     <div class="d-flex">
-      <b-card v-for="film in films"
-        :key="film.Title"
-        :title="film.Title"
-        :img-src="film.Poster"
-        :img-alt="film.Title"
+      <div v-for="result in films"
+        :key="result.imdbID"
+        :title="result.Title"
+        :img-src="result.Poster"
+        img-alt="Image"
         img-top
         tag="article"
         style="max-width: 20rem;"
         class="mb-2"
       >
-        <b-card-text>
-          {{ film.Plot }}, <br /><br />
-          Année de sortie : {{ film.Year }}
-        </b-card-text>
-        <b-button href="#" variant="primary" @click="addFav(film)"
-          >Ajouter aux favoris</b-button
-        >
-      </b-card>
+        <div>
+          Sortie en {{ result.Year }}
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
@@ -39,4 +36,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+button {
+    cursor: pointer;
+}
+</style>
