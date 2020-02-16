@@ -9,11 +9,13 @@
       style="max-width: 20rem;"
       class="mb-2">
       <div>
-        {{ result.Year }}
+        Sortie en {{ result.Year }}
       </div>
       <button href="#" 
         variant="primary" 
-        @click="addFav(result)" >Ajouter aux favoris </button>
+        @click="addFav(result)" >Ajouter aux favoris 
+      </button>
+      
     </div>
   </div>
 </template>

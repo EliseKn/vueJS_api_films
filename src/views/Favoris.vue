@@ -12,9 +12,15 @@
         style="max-width: 20rem;"
         class="mb-2"
       >
-        <div>
-          Sortie en {{ result.Year }}
-        </div>
+      <div>
+        Sortie en {{ result.Year }}
+      </div>
+      
+      <!--
+      <button href="#" 
+        variant="primary" 
+        @click="DeleteFav(result)" >Supprimer des favoris 
+      </button> -->
 
       </div>
     </div>
@@ -30,6 +36,7 @@ export default {
       films: []
     };
   },
+
   mounted() {
     this.films = [...this.$store.getters.favorites];
   }
