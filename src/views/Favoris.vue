@@ -19,7 +19,7 @@
       <!--
       <button href="#" 
         variant="primary" 
-        @click="DeleteFav(result)" >Supprimer des favoris 
+        @click="addFav(result)" >Supprimer des favoris 
       </button> -->
 
       </div>
@@ -36,7 +36,12 @@ export default {
       films: []
     };
   },
-
+  /*
+    methods: {
+    addFav: function(result){
+      this.$store.commit('addFav', result)
+    }
+  },*/
   mounted() {
     this.films = [...this.$store.getters.favorites];
   }

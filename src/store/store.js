@@ -12,9 +12,20 @@ export const store = new Vuex.Store ({
         favorites: state => state.favorites
     },
     mutations: {
-        // ajout aux favoris 
+        
         addFav(state , favorite){
-            state.favorites.push(favorite)
+            /*
+            let FavState = state.favorites.find(e => e === favorite);
+            if (FavState) {
+                // suppr des favoris
+                state.favorites.splice(favorite);
+                console.log("fav deleted")
+            } else {*/
+                // ajout aux favoris 
+                state.favorites.push(favorite)
+                console.log("fav added")
+            // }
+
         },
 
     },   
